@@ -6,13 +6,26 @@ import { MeteorologicalData, EarthquakeData } from './types/types';
 import "./App.css"
 
 function App() {
+  const [timer, setTimer] = useState(Date.now());
   const [metData, setMetData] = useState<MeteorologicalData | null>(null);
   const [earthquakeData, setEarthquakeData] = useState<EarthquakeData | null>(null);
+  const dataRefreshInterval = 5000;
 
-  useEffect(() => {
+  const fetchData = () => {
     fetchMetData(setMetData);
     fetchEarthquakeData(setEarthquakeData);
+  }
+
+  useEffect(() => {
+    fetchData();
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetchData();
+    }, dataRefreshInterval);
+    return () => clearInterval(interval);
+  }, [])
 
   return (
     <>
