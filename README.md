@@ -10,6 +10,10 @@ and
 `EarthquakeTable(.tsx)`
 respectively. Above each table is a slider to adjust maximum number of rows displayed for a table.
 
+MeteorologicalTable shows high-level weather notifications, while
+EarthquakeTable shows timestamp, type and location of earthquake events with some associated measurements (mag, gap and sig).
+
+
 ### Running the application
 Type the following commands in a command-prompt/shell in the root of this project:
 - `npm install`
