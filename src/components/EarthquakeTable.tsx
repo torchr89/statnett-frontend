@@ -20,7 +20,7 @@ export const EarthquakeTable = ({name, data}: Props ) => {
       { data &&
       <div>
         <h2>{name}</h2>
-        <p>Test</p>
+        <b>{data.title}</b>
         <div>
           <RowSlider 
             maxRows={data.nrFeatures}
@@ -33,7 +33,7 @@ export const EarthquakeTable = ({name, data}: Props ) => {
             <tr>
               <th>Entry nr</th>
               <th>Type</th>
-              <th>Description</th>
+              <th>Description (Various fields from the feature's properties)</th>
             </tr>
           </thead>
           <tbody>

@@ -5,6 +5,7 @@ export type EarthquakeFeature = {
 
 export type EarthquakeData = {
   features: EarthquakeFeature[];
+  title: string;
   nrFeatures: number;
 }
 

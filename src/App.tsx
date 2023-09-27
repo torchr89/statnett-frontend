@@ -3,6 +3,7 @@ import { EarthquakeTable } from './components/EarthquakeTable'
 import { MeteorologicalTable } from './components/MeteorologicalTable'
 import { fetchMetData, fetchEarthquakeData } from './util/fetchData';
 import { MeteorologicalData, EarthquakeData } from './types/types';
+import "./App.css"
 
 function App() {
   const [metData, setMetData] = useState<MeteorologicalData | null>(null);

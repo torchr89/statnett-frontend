@@ -21,7 +21,7 @@ export const MeteorologicalTable = ({name, data}: Props ) => {
       { data &&
       <div>
         <h2>{name}</h2>
-        <p>{data.description}</p>
+        <b>{data.description}</b>
         <div>
           <RowSlider 
             maxRows={data.nrItems}
