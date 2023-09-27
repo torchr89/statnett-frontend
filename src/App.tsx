@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Table } from './components/Table'
+import { EarthquakeTable } from './components/EarthquakeTable'
+import { MeteorologicalTable } from './components/MeteorologicalTable'
 import { fetchMetData, fetchEarthquakeData } from './util/fetchData';
-import { MetData, EarthquakeData } from './types/types';
+import { MeteorologicalData, EarthquakeData } from './types/types';
 
 function App() {
-  const [metData, setMetData] = useState<MetData | null>(null);
+  const [metData, setMetData] = useState<MeteorologicalData | null>(null);
   const [earthquakeData, setEarthquakeData] = useState<EarthquakeData | null>(null);
 
   useEffect(() => {
@@ -17,13 +18,13 @@ function App() {
       <h1>Data viewer</h1>
       { earthquakeData &&
         <div>
-          <Table
+          <MeteorologicalTable
             name={"Meteorological data"}
             data={metData}
           />
-          <Table
-            name = {"Earthquake data"}
-            data = {earthquakeData}
+          <EarthquakeTable
+            name={"Earthquake data"}
+            data={earthquakeData}
           />
         </div>
       }

@@ -5,14 +5,16 @@ export type EarthquakeFeature = {
 
 export type EarthquakeData = {
   features: EarthquakeFeature[];
+  nrFeatures: number;
 }
 
-export type MetItem = {
+export type MeteorologicalItem = {
   title: string;
   description: string;
 }
 
-export type MetData = {
+export type MeteorologicalData = {
   description: string;
-  items: MetItem[];
+  items: MeteorologicalItem[];
+  nrItems: number;
 }

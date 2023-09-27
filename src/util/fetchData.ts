@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction } from "react"
-import { EarthquakeData, MetData } from "../types/types";
+import { EarthquakeData, MeteorologicalData } from "../types/types";
 
 const baseUrl = 'http://localhost:8080/api';
 export const urlMetEndpoint = `${baseUrl}/met`;
 export const urlEarthquakeEndpoint = `${baseUrl}/earthquake`;
 
-type CallbackTypes = Dispatch<SetStateAction<MetData | null>>
+type CallbackTypes = Dispatch<SetStateAction<MeteorologicalData | null>>
                    | Dispatch<SetStateAction<EarthquakeData | null>>
 
 export const fetchDataFromUrl = (url: string, setCallback: CallbackTypes) => {
@@ -15,7 +15,7 @@ export const fetchDataFromUrl = (url: string, setCallback: CallbackTypes) => {
   .catch(error => console.error(error));
 }
 
-export const fetchMetData = (setMetData: Dispatch<SetStateAction<MetData | null>>) => {
+export const fetchMetData = (setMetData: Dispatch<SetStateAction<MeteorologicalData | null>>) => {
   fetchDataFromUrl(urlMetEndpoint, setMetData);
 }
 
