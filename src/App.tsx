@@ -17,18 +17,20 @@ function App() {
   return (
     <>
       <h1>Data viewer</h1>
-      { earthquakeData &&
         <div>
+          { metData &&
           <MeteorologicalTable
             name={"Meteorological data"}
             data={metData}
           />
+          }
+          { earthquakeData &&
           <EarthquakeTable
             name={"Earthquake data"}
             data={earthquakeData}
           />
+          }
         </div>
-      }
     </>
   )
 }
